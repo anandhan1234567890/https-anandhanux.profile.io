@@ -11,9 +11,9 @@ function resizeCanvas() {
 }
 window.addEventListener("resize", resizeCanvas);
 
-const frameCount = 99; // frame_000002 to frame_000100
+const frameCount = 90; // frame_000002 to frame_000091
 const currentFrame = index => (
-    `frames/frame_${(index + 2).toString().padStart(6, '0')}.webp`
+    `frame_${(index + 2).toString().padStart(6, '0')}.webp`
 );
 
 const images = [];
