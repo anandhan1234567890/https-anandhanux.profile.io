@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anandhan Mariappan | Product Designer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 3D Image Sequence Canvas -->
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- Abstract CSS Background (Overlays on top of canvas for premium look) -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-noise"></div>
+
+    <!-- Audio Element for Background Sound -->
+    <audio id="bg-audio" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=ambient-piano-ampamp-strings-10711.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <!-- Main Hero Section -->
+        <main class="hero-section">
+            <!-- Premium Pill Navbar -->
+            <div class="floating-nav-wrapper">
+                <nav class="floating-nav">
+                    <a href="#" class="fn-logo">ANANDHAN.</a>
+                    
+                    <div class="fn-divider"></div>
+                    
+                    <div class="fn-links">
+                        <a href="#about" class="fn-link active">ABOUT</a>
+                        <a href="#experience" class="fn-link">EXPERIENCE</a>
+                        <a href="#skills" class="fn-link">SKILLS</a>
+                        <a href="#projects" class="fn-link">PROJECTS</a>
+                    </div>
+                    
+                    <div class="fn-divider"></div>
+                    
+                    <div class="fn-socials">
+                        <a href="https://www.linkedin.com/in/anandhan-m-98404b281/" target="_blank" class="fn-icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.behance.net/anandan3" target="_blank" class="fn-icon" title="Behance"><i class="fa-brands fa-behance"></i></a>
+                        <a href="mailto:anandhan6369437404@gmail.com" class="fn-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="file:///C:/Users/Anandhan/Downloads/Anandhan_Mariappan_Product_Designer_Resume%20NEW.pdf" target="_blank" class="fn-icon" title="Download Resume"><i class="fa-solid fa-download"></i></a>
+                        <div class="fn-divider" style="margin: 0 0.5rem;"></div>
+                        <a href="#" id="sound-btn" class="fn-icon" title="Toggle Ambient Sound" style="color: #fff;"><i class="fa-solid fa-volume-xmark"></i></a>
+                    </div>
+                </nav>
+            </div>
+
+                                    <div class="hero-content" style="margin-top: 160px;">
+                <p class="hero-greeting" style="display: flex; align-items: center; gap: 1rem; color: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 2rem;">
+                    <span style="width: 40px; height: 1px; background: rgba(255,255,255,0.4); display: inline-block;"></span>
+                    <span style="font-weight: 300; color: rgba(255,255,255,0.8);">I AM</span> <span style="font-weight: 700;">ANANDHAN</span>
+                </p>
+                
+                <h1 class="hero-text" style="margin-bottom: 3.5rem;">
+                    <span class="solid-text" style="display: block; line-height: 1;">PRODUCT</span>
+                    <span class="outline-text" style="display: block; line-height: 1; font-style: italic; -webkit-text-stroke: 1.5px rgba(255,255,255,0.8); color: transparent;">DESIGNER</span>
+                </h1>
+                
+                <div class="hero-tags" style="display: flex; gap: 1.5rem;">
+                    <a href="#" class="premium-btn tag-anim">
+                        <i class="fa-solid fa-cube btn-icon"></i>
+                        <div class="btn-divider"></div>
+                        <span class="btn-text">Agentic AI</span>
+                        <i class="fa-solid fa-arrow-right btn-arrow"></i>
+                    </a>
+                    
+                    <a href="#" class="premium-btn tag-anim">
+                        <i class="fa-solid fa-circle-nodes btn-icon"></i>
+                        <div class="btn-divider"></div>
+                        <span class="btn-text">UI/UX Design</span>
+                        <i class="fa-solid fa-arrow-right btn-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Portfolio Content Section -->
+    <div class="portfolio-content">
+        
+        <!-- About Section -->
+        <section class="content-section" id="about">
+            <div class="section-inner projects-inner" style="max-width: 1000px;">
+                <div class="about-card">
+                    <div class="ac-top">
+                        <span class="ac-tag">&mdash; 01 // ABOUT ME</span>
+                    </div>
+                    <h3 class="ac-heading">I am a Product Designer with 3+ years of experience crafting <i style="font-style: italic; color: #fff; font-weight: 400;">digital products</i> across Web3, AI, SaaS, VPN, FinTech, and E-commerce.</h3>
+                    
+                    <hr class="ac-divider">
+                    
+                    <p class="ac-desc">Experienced in UI/UX design, user flows, wireframing, prototyping, design systems, responsive interfaces, and developer handoff. I specialize in designing seamless experiences across web, mobile, browser extensions, and enterprise platforms while collaborating closely with product and engineering teams.</p>
+                    
+                    <a href="#experience" class="ac-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="content-section" id="experience">
+            <div class="section-inner projects-inner" style="max-width: 800px;">
+                <h2 class="section-title">02 // <span>EXPERIENCE</span></h2>
+                
+                <div class="exp-header-layout" style="display: flex; gap: 2rem; margin-bottom: 4rem; align-items: center;">
+                    <h3 class="bento-title" style="flex: 1; font-size: 3rem; line-height: 1.1; margin: 0; color: #fff;">A short list<br>of <i style="color: #fff; font-style: italic;">things I’ve built.</i></h3>
+                    <p style="flex: 1; color: var(--text-muted); font-size: 0.95rem;">Different products, different problems, one constant &mdash; making digital experiences simpler, clearer, and more enjoyable to use.</p>
+                </div>
+
+                <div class="exp-timeline">
+                    <!-- Item 1: SHINELANE -->
+                    <div class="exp-timeline-item">
+                        <div class="exp-timeline-left">
+                            <span class="exp-date">2026</span>
+                            <div class="exp-dot"></div>
+                        </div>
+                        <div class="exp-timeline-card">
+                            <h4 style="color: #fff; font-size: 1.5rem; margin-bottom: 0.2rem; font-family: 'Satoshi', sans-serif;">SHINELANE</h4>
+                            <span class="exp-role">Product Designer &middot; E-commerce</span>
+                            <p>Designed a modern e-commerce experience covering storefronts, CRM dashboards, and admin panels, simplifying product management, customer interactions, and business operations.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: QVPN -->
+                    <div class="exp-timeline-item">
+                        <div class="exp-timeline-left">
+                            <span class="exp-date">2026</span>
+                            <div class="exp-dot"></div>
+                        </div>
+                        <div class="exp-timeline-card">
+                            <h4 style="color: #fff; font-size: 1.5rem; margin-bottom: 0.2rem; font-family: 'Satoshi', sans-serif;">QVPN</h4>
+                            <span class="exp-role">Product Designer &middot; Web3 / VPN</span>
+                            <p>Designed a multi-platform VPN experience across web, mobile, and TV, focusing on authentication, onboarding, dashboards, navigation, and responsive interfaces.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: TELEGRAM GAMES -->
+                    <div class="exp-timeline-item">
+                        <div class="exp-timeline-left">
+                            <span class="exp-date">2025</span>
+                            <div class="exp-dot"></div>
+                        </div>
+                        <div class="exp-timeline-card">
+                            <h4 style="color: #fff; font-size: 1.5rem; margin-bottom: 0.2rem; font-family: 'Satoshi', sans-serif;">TELEGRAM GAMES</h4>
+                            <span class="exp-role">Product Designer &middot; Web3 Gaming</span>
+                            <p>Designed a Telegram-based daily reward gaming experience with simple challenges, engaging interactions, and an easy-to-use interface that encourages repeat participation.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4: DIAM WALLET -->
+                    <div class="exp-timeline-item">
+                        <div class="exp-timeline-left">
+                            <span class="exp-date">2025</span>
+                            <div class="exp-dot"></div>
+                        </div>
+                        <div class="exp-timeline-card">
+                            <h4 style="color: #fff; font-size: 1.5rem; margin-bottom: 0.2rem; font-family: 'Satoshi', sans-serif;">DIAM WALLET</h4>
+                            <span class="exp-role">Product Designer &middot; Web3 / Crypto</span>
+                            <p>Designed a secure self-custodial crypto wallet experience covering onboarding, staking, token transfers, dApp connectivity, and account management.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: HRMS -->
+                    <div class="exp-timeline-item">
+                        <div class="exp-timeline-left">
+                            <span class="exp-date">2025</span>
+                            <div class="exp-dot"></div>
+                        </div>
+                        <div class="exp-timeline-card">
+                            <h4 style="color: #fff; font-size: 1.5rem; margin-bottom: 0.2rem; font-family: 'Satoshi', sans-serif;">HRMS</h4>
+                            <span class="exp-role">UI/UX Designer &middot; SaaS</span>
+                            <p>Designed a human resource management experience supporting employee workflows, task management, navigation, and structured interfaces for everyday HR activities.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: DIAM GAMES -->
+                    <div class="exp-timeline-item">
+                        <div class="exp-timeline-left">
+                            <span class="exp-date">2024</span>
+                            <div class="exp-dot"></div>
+                        </div>
+                        <div class="exp-timeline-card">
+                            <h4 style="color: #fff; font-size: 1.5rem; margin-bottom: 0.2rem; font-family: 'Satoshi', sans-serif;">DIAM GAMES</h4>
+                            <span class="exp-role">Product Designer &middot; Web3 Gaming</span>
+                            <p>Designed Web3 mini-games including DIAM Rush, Flappy Bird, Memory Match, and Gravity Ball, with rewards, referrals, leaderboards, and interactive gameplay.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 7: AI MARKETPLACE -->
+                    <div class="exp-timeline-item">
+                        <div class="exp-timeline-left">
+                            <span class="exp-date">2024</span>
+                            <div class="exp-dot"></div>
+                        </div>
+                        <div class="exp-timeline-card">
+                            <h4 style="color: #fff; font-size: 1.5rem; margin-bottom: 0.2rem; font-family: 'Satoshi', sans-serif;">AI MARKETPLACE</h4>
+                            <span class="exp-role">Product Designer &middot; AI / SaaS</span>
+                            <p>Designed an AI marketplace experience focused on discovery, subscriptions, pricing, and product management, creating a structured flow for exploring and using AI products.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="content-section" id="projects">
+            <div class="section-inner projects-inner" style="max-width: 1150px;">
+                <h2 class="section-title">02 // <span>SELECTED PROJECTS</span></h2>
+                <h3 class="bento-title" style="font-size: 2.5rem; margin-bottom: 2.5rem; color: #fff; font-weight: 700;">Design Stories — Product & UX</h3>
+                
+                <div class="projects-bento">
+                    <!-- Project 1 (Full Width) -->
+                    <a href="https://www.behance.net/gallery/245460905/DIAM-Wallet-Web3-Crypto-Wallet-UXUI-Case-Study" target="_blank" class="bento-card full-card">
+                        <div class="bento-text">
+                            <span class="bento-tag">WEB3 WALLET • 2025</span>
+                            <h4 style="color: var(--text-main);">DIAM Wallet</h4>
+                            <p>With user-centered approach, the goals was to create an intuitive interface for effortless financial management while incorporating gamification.</p>
+                            <div class="bento-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                        <div class="bento-image">
+                            <img src="DIAM-Wallet-Web3-Crypto-Wallet.avif" alt="DIAM Wallet">
+                        </div>
+                    </a>
+
+                    <div class="bento-row" style="display: flex; gap: 1.5rem;">
+                        <!-- Project 2 (Half Width) -->
+                        <a href="https://www.behance.net/gallery/231373715/DIAM-Rush-Telegram-Based-Web3-Mini-Game-UI" target="_blank" class="bento-card half-card" style="flex: 1;">
+                            <div class="bento-text">
+                                <span class="bento-tag">TELEGRAM BOT • 2025</span>
+                                <h4 style="color: var(--text-main);">DIAM Moon</h4>
+                                <p>Secure, self-custodial extension for managing multi-chain crypto assets. Built for privacy and control without third-party access.</p>
+                                <div class="bento-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+                            <div class="bento-image">
+                                <img src="DIAM-Moon.avif" alt="DIAM Moon">
+                            </div>
+                        </a>
+
+                        <!-- Project 3 (Half Width) -->
+                        <a href="https://www.behance.net/gallery/238330683/DIAM-GAMES-A-UIUX-Case-Study-on-Web3-Gaming" target="_blank" class="bento-card half-card" style="flex: 1;">
+                            <div class="bento-text">
+                                <span class="bento-tag">CRYPTO GAMING • 2025</span>
+                                <h4 style="color: var(--text-main);">Diamante Games</h4>
+                                <p>A lightweight Web3 game platform featuring over seven engaging mini-games. Introduces entertainment as an entry point into Web3.</p>
+                                <div class="bento-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+                            <div class="bento-image">
+                                <img src="Diamante Games.avif" alt="Diamante Games">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="content-section" id="skills">
+            <div class="section-inner projects-inner" style="max-width: 1000px;">
+                <h2 class="section-title">04 // <span>CORE SKILLS</span></h2>
+                
+                <div class="exp-header-layout" style="display: flex; gap: 3rem; margin-bottom: 4rem; align-items: center;">
+                    <h3 class="bento-title" style="flex: 1; font-size: 3rem; line-height: 1.1; margin: 0; color: #fff;">Tools, skills &<br>areas I <i style="color: #fff; font-style: italic;">work with.</i></h3>
+                    <div style="width: 1px; height: 80px; background: rgba(255,255,255,0.2);"></div>
+                    <p style="flex: 1; color: var(--text-muted); font-size: 0.95rem; margin: 0;">A combination of design, product thinking and emerging technologies to create simple, functional and engaging digital experiences.</p>
+                </div>
+                
+                <div class="new-skills-grid">
+                    <!-- Card 1 -->
+                    <div class="new-skill-card">
+                        <div class="nsc-top">
+                            <span class="nsc-num">01</span>
+                            <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg); font-size: 0.9rem; color: var(--text-muted);"></i>
+                        </div>
+                        <div class="nsc-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                        <h4 class="nsc-title">Design & Tools</h4>
+                        <p class="nsc-desc">Figma, Framer, Adobe XD, Sketch, Photoshop, Illustrator, Canva, Product Design, UI/UX Design, Visual Design.</p>
+                        <hr class="nsc-divider">
+                        <div class="nsc-tools">
+                            <div class="tool-box"><i class="fa-brands fa-figma"></i></div>
+                            <div class="tool-box">Ps</div>
+                            <div class="tool-box">Ai</div>
+                            <div class="tool-box">Xd</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="new-skill-card">
+                        <div class="nsc-top">
+                            <span class="nsc-num">02</span>
+                            <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg); font-size: 0.9rem; color: var(--text-muted);"></i>
+                        </div>
+                        <div class="nsc-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <h4 class="nsc-title">UX & Strategy</h4>
+                        <p class="nsc-desc">User Research, Usability Testing, Info Architecture, User Flows, Prototyping, Design Systems, Accessibility.</p>
+                        <hr class="nsc-divider">
+                        <div class="nsc-tools">
+                            <div class="tool-box"><i class="fa-brands fa-figma"></i></div>
+                            <div class="tool-box">N</div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="new-skill-card">
+                        <div class="nsc-top">
+                            <span class="nsc-num">03</span>
+                            <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg); font-size: 0.9rem; color: var(--text-muted);"></i>
+                        </div>
+                        <div class="nsc-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h4 class="nsc-title">AI & Collaboration</h4>
+                        <p class="nsc-desc">ChatGPT, Claude, Gemini, Midjourney, Figma AI, Uizard, FigJam, Miro, Zeplin, Jira, Notion.</p>
+                        <hr class="nsc-divider">
+                        <div class="nsc-tools">
+                            <div class="tool-box"><i class="fa-solid fa-robot"></i></div>
+                            <div class="tool-box">N</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="content-section" id="education">
+            <div class="section-inner projects-inner" style="max-width: 1000px;">
+                <div class="exp-header-layout" style="margin-bottom: 3rem;">
+                    <span class="ac-tag" style="display: block; margin-bottom: 1rem;"><span style="color: #fff;">&bull;</span> 05 // EDUCATION</span>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <!-- Education 1 -->
+                    <div class="edu-card">
+                        <div class="edu-left">
+                            <span class="edu-num">01</span>
+                            <div class="edu-line"></div>
+                        </div>
+                        <div class="edu-content">
+                            <div class="edu-top">
+                                <div>
+                                    <h3 class="edu-title">Arena Animation</h3>
+                                    <span class="edu-subtitle">PG Diploma in Animation & Design</span>
+                                </div>
+                                <span class="edu-date">Feb 2022 &ndash; Jul 2023</span>
+                            </div>
+                            <hr class="edu-divider">
+                            <p class="edu-desc" style="margin-bottom: 0;">Studied Graphic Design, UI/UX Design, Visual Design, Animation, Typography, Branding, Illustration, and Digital Communication in Bangalore, India.</p>
+                        </div>
+                    </div>
+
+                    <!-- Education 2 -->
+                    <div class="edu-card">
+                        <div class="edu-left">
+                            <span class="edu-num">02</span>
+                            <div class="edu-line"></div>
+                        </div>
+                        <div class="edu-content">
+                            <div class="edu-top">
+                                <div>
+                                    <h3 class="edu-title">Jayam College of Engineering & Technology</h3>
+                                    <span class="edu-subtitle">Bachelor of Engineering (BE) | CGPA: 7.6/10</span>
+                                </div>
+                                <span class="edu-date">Jul 2016 &ndash; Mar 2020</span>
+                            </div>
+                            <hr class="edu-divider">
+                            <p class="edu-desc" style="margin-bottom: 0;">Built a foundation in technical problem-solving, analytical thinking, research, planning, teamwork, and project development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Anandhan Mariappan &mdash; Making digital feel simple.</p>
+        </footer>
+    </div>
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="script.js"></script>
+</body>
+</html>
