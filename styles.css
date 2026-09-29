@@ -252,8 +252,10 @@ nav a:hover {
 }
 
 .section-title span {
-    color: var(--text-main);
-    font-weight: 700;
+    background: linear-gradient(90deg, #00d4ff, #7b61ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShine 8s linear infinite;
 }
 
 .section-text {
@@ -1194,11 +1196,16 @@ h1, h2, h3, h4, h5, h6, .logo, .section-title {
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(123, 97, 255, 0.3);
     border-radius: 100px;
     padding: 0.6rem 0.8rem 0.6rem 2rem;
     gap: 2rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 40px rgba(123, 97, 255, 0.15);
+    transition: all 0.3s ease;
+}
+.floating-nav:hover {
+    border-color: rgba(0, 212, 255, 0.5);
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
 }
 
 .fn-logo {
@@ -1289,11 +1296,16 @@ h1, h2, h3, h4, h5, h6, .logo, .section-title {
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(123, 97, 255, 0.3);
     border-radius: 100px;
     padding: 0.6rem 0.8rem 0.6rem 2rem;
     gap: 2rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 40px rgba(123, 97, 255, 0.15);
+    transition: all 0.3s ease;
+}
+.floating-nav:hover {
+    border-color: rgba(0, 212, 255, 0.5);
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
 }
 
 .fn-logo {
@@ -1372,8 +1384,8 @@ h1, h2, h3, h4, h5, h6, .logo, .section-title {
 .premium-btn {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(123, 97, 255, 0.05);
+    border: 1px solid rgba(123, 97, 255, 0.3);
     border-radius: 100px;
     padding: 1rem 1.8rem;
     gap: 1.5rem;
@@ -1570,4 +1582,34 @@ h1, h2, h3, h4, h5, h6, .logo, .section-title {
     .hero-text {
         font-size: 2.5rem !important;
     }
+}
+
+
+.exp-dot {
+    background: #00d4ff;
+    box-shadow: 0 0 15px #00d4ff;
+}
+
+.exp-date {
+    color: #ffffff;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: 
+        radial-gradient(circle at 15% 50%, rgba(123, 97, 255, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 85% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 60%);
+    z-index: -2;
+    pointer-events: none;
+    animation: bgMove1 15s ease-in-out infinite;
+}
+
+@keyframes bgMove1 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(10vw, -10vh) scale(1.1); }
+    100% { transform: translate(0, 0) scale(1); }
 }
