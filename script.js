@@ -4,68 +4,75 @@ gsap.registerPlugin(ScrollTrigger);
 const canvas = document.getElementById("hero-canvas");
 const context = canvas.getContext("2d");
 
-function resizeCanvas() {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     render();
-}
-window.addEventListener("resize", resizeCanvas);
+});
 
-const frameCount = 90; // frame_000002 to frame_000091
-const currentFrame = index => (
-    `frame_${(index + 2).toString().padStart(6, '0')}.webp`
-);
+const frameCount = 90; // 90 frames total (02 to 91)
+const currentFrame = index => `frame_${(index + 2).toString().padStart(6, '0')}.webp`;
 
 const images = [];
 const frames = { frame: 0 };
 
-// Preload
+// Preload all frames
 for (let i = 0; i < frameCount; i++) {
     const img = new Image();
     img.src = currentFrame(i);
     images.push(img);
 }
 
+// Draw the very first frame as soon as it loads to prevent blank screen
+images[0].onload = render;
+
 function render() {
-    if (!images[frames.frame]) return;
-    const img = images[frames.frame];
-    if(img.complete) drawImage(img);
-    else img.onload = () => drawImage(img);
+    const frameIndex = Math.round(frames.frame);
+    if (!images[frameIndex]) return;
+    
+    const img = images[frameIndex];
+    if (img.complete) {
+        drawImageCover(img);
+    } else {
+        img.onload = () => drawImageCover(img);
+    }
 }
 
-function drawImage(img) {
+// Perfect 'object-fit: cover' equivalent for Canvas with RIGHT alignment
+function drawImageCover(img) {
     const hRatio = canvas.width / img.width;
     const vRatio = canvas.height / img.height;
-    const ratio = Math.max(hRatio, vRatio);
+    const ratio = Math.max(hRatio, vRatio); // Max for 'cover', Min for 'contain'
     
-    // Default center shift
-    let centerShift_x = (canvas.width - img.width * ratio) / 2;
-    const centerShift_y = (canvas.height - img.height * ratio) / 2;
+    const newWidth = img.width * ratio;
+    const newHeight = img.height * ratio;
     
-    // Shift the image to the right so the face doesn't overlap the left-aligned text
-    // We add an offset (e.g., 20% of the screen width)
-    centerShift_x += canvas.width * 0.20; 
+    let shiftX = (canvas.width - newWidth) / 2;
+    const shiftY = (canvas.height - newHeight) / 2;
+    
+    // Shift the subject to the right side to leave the left clear for text
+    if (window.innerWidth > 992) { shiftX += canvas.width * 0.25; } else { shiftX += canvas.width * 0.15; } 
     
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(img, 0, 0, img.width, img.height,
-        centerShift_x, centerShift_y, img.width * ratio, img.height * ratio);
+    context.drawImage(img, 0, 0, img.width, img.height, shiftX, shiftY, newWidth, newHeight);
 }
 
-resizeCanvas();
-
-// Animate frame sequence on scroll
+// GSAP ScrollTrigger for absolutely smooth scrubbing
 gsap.to(frames, {
     frame: frameCount - 1,
-    snap: "frame",
-    ease: "none",
+    ease: "none", // Linear animation
     scrollTrigger: {
         trigger: "body",
         start: "top top",
-        end: "bottom bottom", // Matches full page scroll length
-        scrub: 0.5,
+        end: "bottom bottom",
+        scrub: 1, // 1 second lag for buttery smooth scrubbing
     },
     onUpdate: render
 });
+
 // --- End Image Sequence Logic ---
 
 // 1. Initial Hero Animation
@@ -202,3 +209,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+
+
+// Navigation Link Highlighting on Scroll
+const navSections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".fn-link");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+    navSections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= (sectionTop - 300)) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
