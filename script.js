@@ -14,7 +14,7 @@ window.addEventListener("resize", () => {
 });
 
 const frameCount = 90; // 90 frames total (02 to 91)
-const currentFrame = index => `new_frames/frame_${(index + 1).toString().padStart(3, "0")}.jpg`;
+const currentFrame = index => `frame_${(index + 1).toString().padStart(3, "0")}.jpg`;
 
 const images = [];
 const frames = { frame: 0 };
