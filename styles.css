@@ -76,7 +76,7 @@ body {
 .container {
     width: 100%;
     min-height: 100vh;
-    padding: 2rem 5%;
+    padding: 2rem 88px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -163,10 +163,10 @@ nav a:hover {
 }
 
 .hero-text {
-    font-size: clamp(3rem, 7vw, 6rem);
-    line-height: 1.1;
+    font-size: 120px !important;
+    line-height: 1;
     margin-bottom: 2rem;
-    font-family: 'Druk Wide Bold', 'Druk Wide', 'Arial Black', sans-serif;
+    font-family: 'Montserrat', 'Satoshi', sans-serif; font-weight: 900; letter-spacing: 2px;
     text-transform: uppercase;
 }
 
@@ -503,7 +503,7 @@ footer {
     font-family: 'Satoshi', sans-serif;
     font-weight: 700;
     margin-bottom: 1rem;
-    line-height: 1.1;
+    line-height: 1;
 }
 
 .bento-text p {
@@ -584,9 +584,7 @@ h1, h2, h3, h4, h5, h6, .logo, .section-title {
     font-family: 'Satoshi', sans-serif;
     font-weight: 700;
 }
-.hero-text {
-    font-family: 'Druk Wide Bold', 'Druk Wide', 'Arial Black', sans-serif !important;
-}
+
 
 
 /* Experience Timeline Styles */
@@ -1475,7 +1473,7 @@ h1, h2, h3, h4, h5, h6, .logo, .section-title {
 }
 .floating-nav-wrapper {
     position: absolute;
-    top: 5px;
+    top: 35px;
     left: 0;
     z-index: 1000;
     display: flex;
@@ -1508,6 +1506,7 @@ h1, h2, h3, h4, h5, h6, .logo, .section-title {
     }
     .exp-header-layout {
         flex-direction: column !important;
+        align-items: flex-start !important;
         gap: 1.5rem !important;
     }
     .bento-title {
@@ -1521,20 +1520,19 @@ h1, h2, h3, h4, h5, h6, .logo, .section-title {
     
         /* Hero Section */
     .hero-content {
-        margin-top: 80px !important;
+        margin-top: 50px !important;
         text-shadow: 0 4px 20px rgba(0,0,0,0.9);
     }
     .hero-text {
-        font-size: 3rem !important;
+        font-size: 120px !important;
     }
     .hero-tags {
         flex-direction: column !important;
+        align-items: flex-start !important;
         gap: 1rem !important;
     }
     .premium-btn {
-        width: 100%;
-        justify-content: center;
-        padding: 0.8rem 1.2rem !important;
+        padding: 0.8rem 1.5rem !important;
     }
     .premium-btn .btn-arrow {
         margin-left: auto !important; /* Push arrow to right side */
@@ -1543,6 +1541,7 @@ h1, h2, h3, h4, h5, h6, .logo, .section-title {
     /* Grids & Cards */
     .bento-row {
         flex-direction: column !important;
+        align-items: flex-start !important;
     }
     .bento-card {
         flex: 1 1 100% !important;
@@ -1556,6 +1555,7 @@ h1, h2, h3, h4, h5, h6, .logo, .section-title {
     /* Education */
     .edu-card {
         flex-direction: column !important;
+        align-items: flex-start !important;
         padding: 2rem !important;
     }
     .edu-left {
@@ -1570,10 +1570,7 @@ h1, h2, h3, h4, h5, h6, .logo, .section-title {
     }
 }
 
-@media (max-width: 480px) {
-    .floating-nav {
-        padding: 0.6rem 1rem !important;
-    }
+
     .fn-logo {
         font-size: 0.7rem !important;
     }
@@ -1583,7 +1580,7 @@ h1, h2, h3, h4, h5, h6, .logo, .section-title {
         font-size: 0.9rem !important;
     }
     .hero-text {
-        font-size: 2.5rem !important;
+        font-size: clamp(60px, 15vw, 100px) !important;
     }
 }
 
@@ -1619,7 +1616,61 @@ body::before {
 
 
 /* Ensure content sits above the canvas */
-.hero-content, .content-section, .floating-nav-wrapper, footer {
+.hero-content, .content-section, footer {
     position: relative;
     z-index: 10;
+}
+.mobile-menu-btn { display: none; } /* Hide by default on desktop */
+
+@media (max-width: 480px) {
+    /* MOBILE NAVBAR STRICTLY 320px - 430px */
+    .floating-nav-wrapper {
+        top: 24px !important;
+        left: 24px !important;
+        width: calc(100% - 48px) !important;
+        margin: 0 !important;
+        z-index: 9999 !important; /* Proper z-index above portrait */
+    }
+    .floating-nav {
+        width: 100% !important;
+        height: 64px !important;
+        border-radius: 999px !important;
+        padding: 0 16px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 0 !important;
+        box-sizing: border-box !important;
+    }
+    .fn-logo {
+        font-size: 0.65rem !important;
+        letter-spacing: 1px !important;
+        flex-shrink: 0 !important;
+        margin-right: auto !important;
+    }
+    .fn-socials {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: clamp(4px, 1.5vw, 10px) !important;
+        flex-shrink: 0 !important;
+    }
+    .fn-icon {
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 0.8rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .mobile-menu-btn {
+        display: flex !important; /* Show hamburger on mobile */
+    }
+    
+    .hero-text {
+        font-size: clamp(60px, 15vw, 100px) !important;
+    }
 }

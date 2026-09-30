@@ -14,7 +14,7 @@ window.addEventListener("resize", () => {
 });
 
 const frameCount = 90; // 90 frames total (02 to 91)
-const currentFrame = index => `frame_${(index + 2).toString().padStart(6, '0')}.webp`;
+const currentFrame = index => `new_frames/frame_${(index + 1).toString().padStart(3, "0")}.jpg`;
 
 const images = [];
 const frames = { frame: 0 };
@@ -37,8 +37,8 @@ function render() {
     if (img.complete) {
         drawImageCover(img);
     } else {
-        img.onload = () => drawImageCover(img);
-    }
+        img.onload = () => { if (Math.round(frames.frame) === frameIndex) drawImageCover(img); };
+}
 }
 
 // Perfect 'object-fit: cover' equivalent for Canvas with RIGHT alignment
@@ -54,8 +54,7 @@ function drawImageCover(img) {
     const shiftY = (canvas.height - newHeight) / 2;
     
     // Shift the subject to the right side to leave the left clear for text
-    if (window.innerWidth > 992) { shiftX += canvas.width * 0.25; } else { shiftX += canvas.width * 0.15; } 
-    
+    if (window.innerWidth > 992) { shiftX += canvas.width * 0.25; } else { shiftX += canvas.width * 0.15; }
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.drawImage(img, 0, 0, img.width, img.height, shiftX, shiftY, newWidth, newHeight);
 }
